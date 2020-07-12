@@ -10,7 +10,11 @@ const forecast = (latitude, longitude, unit, callback) => {
             callback('Unable to load data. Please try again', undefined)
         } else {
             const currentData = body.current
-            callback(undefined, currentData.weather_descriptions[0] + '. It is currently '+ currentData.temperature + ' degrees out. It feels like '+ currentData.feelslike + ' degrees out')
+            callback(undefined, currentData.weather_descriptions[0] + '. It is currently '+ 
+                currentData.temperature + ' degrees out. It feels like '+ 
+                currentData.feelslike + ' degrees out. The Humidity is '+ 
+                currentData.humidity
+                )
         }
     })
 }
